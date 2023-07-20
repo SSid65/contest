@@ -1,0 +1,510 @@
+// @import "./destyle" ; 
+// @import "./normalize" ;
+@import "./reset"; 
+@import "./visHidden";
+@import "./vars";
+
+//   add fonts
+@import "./winston";
+@import "./vasek";
+
+html {
+  font-size: $fontSize;
+}
+
+body {
+  font-family: $fontMain;
+  font-style: normal;
+  font-weight: $fontWeightNormal;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  color: $colorBlack;
+  
+  // background-color: $colorBgnd;
+  background-color: aquamarine;
+}
+
+.btn {
+  min-width: 30rem;
+  padding: 1.4rem 0;
+  
+  border-radius: 40px;
+  border: 1px solid $colorLight;
+  background: $colorBright;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section__title {
+  margin-bottom: 1rem;
+
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+// COMMON PART END
+
+
+// =============== HEADER PART START
+.header__nav {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo__img {
+  width: 15px;
+  height: 22px; 
+}
+
+.menu {
+  width: 32px;
+  height: 17px; 
+}
+
+@media (min-width: 639px) { 
+
+  .header__nav {
+    padding: 2rem;
+  }
+
+  .logo__img {
+    width: 26px;
+    height: 40px; 
+  }
+ }
+
+ @media (min-width: 1599px) { 
+ .burger {
+  display: none;
+ }
+
+}
+
+// =============== HEADER PART END
+
+// =============== COVER PART START
+.cover {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "title"
+    "lead"
+    "line"
+    "pict"
+    "btn"
+  ;
+}
+.main__title {
+  grid-area: title;
+
+  margin-bottom: 1rem;
+  
+  font-weight: 700;
+  font-size: 2.9rem;
+  text-transform: uppercase;
+
+  & span {
+    color: $colorGray;
+  }
+}
+
+.lead {
+  grid-area: lead;
+
+  margin-bottom: 0.8rem;
+
+  color: $colorDark;
+  font-weight: 500;
+  line-height: 1.37;
+}
+
+.line {
+  grid-area: line;
+  width: 100%;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid $colorLight;
+}
+
+.cover__pict {
+  grid-area: pict;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.cover__btn {
+  grid-area: btn;
+  justify-self: center;
+}
+
+@media (min-width: 639px) { 
+  .cover {
+    padding: 2rem;
+  }
+
+
+
+  .main__title {
+    font-size: 4.8rem;
+    text-transform: uppercase;
+  }
+
+}
+
+ @media (min-width: 1599px) { 
+ .burger {
+  display: none;
+ }
+
+}
+
+
+// =============== COVER PART END
+
+// =============== ABOUT us PART START
+.about {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "title"
+    "lead"
+    "text"
+    "table"
+  ;
+}
+
+.about .section__title {
+  grid-area: title;
+}
+
+.section__lead {
+  grid-area: lead;
+  margin-bottom: 1rem;
+
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.1; 
+}
+
+.section__text {
+  grid-area: text;
+  margin-bottom: 1rem;
+
+  line-height: 1.3;
+  color: $colorDark;
+  opacity: 0.8;
+}
+
+.about__info {
+  grid-area: table;
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2.9rem;
+}
+
+.info__number {
+  padding-top: 0.5rem;
+  margin-bottom: 0.5rem;
+
+  font-family: $fontDecor;
+  color: $colorBlack;
+  font-size: 3rem;
+  line-height: 1.1;
+
+  border-top: solid 1px $colorLight;
+}
+
+.info__text {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: $colorDark;
+}
+// =============== ABOUT us PART END
+
+// =============== most POPULAR PART START
+.popular {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "title"
+    "list";  
+}
+
+.popular__item {
+
+  display: grid;
+  grid-template-columns: 1fr;
+ 
+  padding: 1rem 0;
+  border-top: solid 0.1rem $colorLight;
+
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  &:last-of-type {
+    border-bottom: solid 0.1rem $colorLight;
+  }
+}
+
+.popular__item__full {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+  grid-template-areas: 
+  "title"
+  "date"
+  "text"
+  "photo"
+  "btn";
+}
+
+.article__title {
+  grid-area: title;
+
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.article__date {
+  rid-area: date;
+}
+
+.article__full__text {
+  grid-area: text;
+
+  display: grid;
+  row-gap: 0.5rem;
+
+  font-size: 1.6rem;
+  line-height: 1.37;
+
+  color: $colorDark;
+
+  & span {
+    color: $colorBlack;
+  }
+}
+
+.article__photo {
+  grid-area: photo;
+  width: 100%;
+}
+
+.popular__btn {
+  grid-area: btn;
+  justify-self: center;
+}
+// =============== most POPULAR PART END
+
+
+// =============== GALLERY PART START
+
+.gallery__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1rem;
+}
+
+.gallery__item {
+}
+
+.gallery__item__link {
+outline: auto blue;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+
+}
+
+.gallery__item__title {
+  grid-area: 1 / 1 / -1 / -1;
+  z-index: 1;
+  align-self: self-end;
+  padding: 0 0 1rem 1rem;
+
+  color: $colorBlack;
+  font-size: 1.6rem;
+  font-weight: 700;
+  
+  text-transform: uppercase;
+}
+
+.gallery__item__img {
+  grid-area: 1 / 1 / -1 / -1;
+  display: block;
+  width: 100%;
+}
+
+// =============== GALLERY PART STOP
+
+// =============== NEWS PART START
+.news {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "title"
+    "text"
+    "date"
+    "btn";  
+}
+
+.news .section__title {
+  grid-area: title;
+}
+
+.news__text {
+  grid-area: text;
+  margin-bottom: 1rem;
+
+  line-height: 1.5;
+}
+
+.date {
+  grid-area: date;
+}
+
+.news__btn {
+  grid-area: btn;
+  justify-self: center;
+}
+// =============== NEWS PART STOP
+
+
+
+// =============== FAQ PART START
+
+.faq {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "title"
+    "list";  
+}
+
+.faq .section__title {
+  grid-area: title;
+}
+
+.faq__list {
+  grid-area: list;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.faq__item {
+  display: grid;
+  grid-template-columns: 1fr;
+ 
+  padding: 1rem 0;
+  border-top: solid 0.1rem $colorLight;
+
+  &:last-of-type {
+    border-bottom: solid 0.1rem $colorLight;
+  }
+}
+
+
+.faq__item__active a {
+  padding-bottom: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  grid-template-areas: 
+    "title"
+    "text";
+
+  background-color: $colorBright;
+  border: solid 0.1rem $colorLight;
+
+}
+
+.faq__subtitle {
+  grid-area: title;
+
+  font-weight: 500;
+  font-size: 1.6rem; 
+  line-height: 1.2;
+
+}
+
+.faq__text {
+  font-size: 1.4rem;
+  line-height: 1.2;
+}
+// =============== FAQ PART STOP
+
+
+// =============== CONTACT PART START
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  grid-template-areas: 
+    "title"
+    "text"
+    "form";
+}
+
+.contact .section__title {
+  grid-area: title;
+
+  margin-bottom: 0;
+}
+
+.contact__text {
+  grid-area: text;
+
+  font-size: 1.2rem;  
+}
+
+.contact__form {
+  grid-area: form;
+
+  margin-bottom: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  & input {
+    padding: 1.4rem 1rem;
+
+    border-radius: 2px;
+    border: 1px solid $colorLight;
+    background: transparent;
+
+    &::placeholder {
+      color: $colorLight;
+      font-size: 1.6rem;
+      line-height: 1.37;
+    }
+  }
+}
+
+.btn__send {
+justify-self: center;
+}
+
+
+// =============== CONTACT PART STOP
+
+// FOOTER START
+.main__footer {
+  padding: 1rem;
+  border-top: solid 1px $colorLight;
+}
+
+.footer__list {
+  display: flex;
+  gap: 1rem;
+}
+
+// FOOTER STOP
